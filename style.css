@@ -13,7 +13,7 @@ body {
 .app {
     position: absolute;
     height: auto;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     width: 588px;
     top: 50%;
     left: 50%;
@@ -31,7 +31,7 @@ body {
     margin-top: 15px;
 }
 
-.taskWrapper {
+.tasksWrapper {
     width: 90%;
     margin-top: 30px;
     margin-left: auto;
@@ -40,7 +40,6 @@ body {
 
 .task {
     position: relative;
-    border: 1px solid #818081;
     border-radius: 15px;
     padding: 10px 0 0 20px;
     height: 50px;
@@ -99,39 +98,50 @@ body {
 }
 
 .app__inputWrapper {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    width: 90%;
+    width: 100%;
+    display: flex;
     margin-top: 20px;
 }
 
 .app__input {
-    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
     border: none;
     outline: none;
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    height: 30px;
-    width: 60%;
+    height: 40px;
+    width: 90%;
     text-align: center;
     font-size: 1.2em;
 }
 
 .app__addButton {
-    background: #0B52B9;
-    padding: 12px;
+    background: #fff;
     border: none;
     outline: none;
-    color: #fff;
-    border-radius: 7px;
-    margin-top: 10px;
+    color: #000;
+    border-radius: 0px 10px 10px 0;
+    width: 10%;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     font-weight: bold;
     transition: background .3s ease-in-out;
 }
 
 .app__addButton:hover {
-    background: #266DD3;
+    background: #D8D9DA;
     cursor: pointer;
+}
+
+.noTasksMessage {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 7px;
+}
+
+.addButton__icon {
+    color: #8e8e8e;
 }
