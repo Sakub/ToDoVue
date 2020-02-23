@@ -4,12 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f8d8f86635.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>To Do List</title>
 </head>
 <body>
     <div id="app" class="app">
         <h1 class="app__header">ToDo List</h1>
+        <div class="taskWrapper">
+            <div class="task">
+                <p class="task__title">Go shopping</p>
+                
+                <button class="task__doneButton"><i class="fas fa-check doneButton__icon"></i></button>
+            </div>
+            <div class="task">
+                <p class="task__title">Go shopping</p>
+                
+                <button class="task__doneButton"><i class="fas fa-check doneButton__icon"></i></button>
+            </div>
+            <div class="task">
+                <p class="task__title">Go shopping</p>
+                
+                <button class="task__doneButton"><i class="fas fa-check doneButton__icon"></i></button>
+            </div>
+
+            <div class="task task--done">
+                <p class="task__title">Go shopping</p>
+                
+                <button disabled class="task__doneButton"><i class="fas fa-check doneButton__icon"></i></button>
+            </div>
+        </div>
+        <div class="app__inputWrapper">
+            <input type="text" class="app__input" placeholder="Add task"><br/>
+            <button class="app__addButton">Add</button>
+        </div>
+        
     </div>
 </body>
 </html>

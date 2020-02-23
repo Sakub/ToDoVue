@@ -1,28 +1,134 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-body{
+body {
     height: 100vh;
     background: linear-gradient(#ac28e9, #3c51c4);
 }
-.app{
+
+.app {
     position: absolute;
-    min-height: 700px;
+    height: auto;
+    padding-bottom: 30px;
     width: 588px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fff;
     border-radius: 20px;
-    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
-.app__header{
+
+.app__header {
     text-align: center;
     font-family: 'Lobster';
     margin-top: 15px;
 }
+
+.taskWrapper {
+    width: 90%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task {
+    position: relative;
+    border: 1px solid #818081;
+    border-radius: 15px;
+    padding: 10px 0 0 20px;
+    height: 50px;
+    margin: 9px 0px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.task__doneButton {
+    position: absolute;
+    right: 10px;
+    bottom: 7px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    outline: none;
+    background: #0B52B9;
+    border: none;
+    transition: background .3s ease-in-out;
+
+}
+
+.task__doneButton:hover {
+    background: #2877EA;
+    cursor: pointer;
+}
+
+.doneButton__icon {
+    color: #fff;
+}
+
+.task__title {
+    position: relative;
+    top: 5px;
+    font-weight: bold;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.task--done {
+    opacity: 0.4;
+}
+
+.task--done .task__doneButton:disabled {
+    background: #1AC82C;
+}
+
+.task--done .task__doneButton:hover {
+    background: #1AC82C;
+    cursor: unset;
+}
+.app__inputWrapper{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 90%;
+    margin-top: 20px;
+}
+.app__input{
+    border-radius:10px;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    height: 30px;
+    width: 60%;
+    text-align: center;
+    font-size: 1.2em;
+}
+.app__addButton{
+    background: #0B52B9;
+    padding: 12px;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 7px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background .3s ease-in-out;
+}
+.app__addButton:hover{
+    background: #266DD3;
+    cursor: pointer;
+}
+    
