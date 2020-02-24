@@ -19,7 +19,6 @@ Vue.component('tasks-wrapper', {
             ]
         }
     }
-
 })
 var app = new Vue({
     el: '#app',
