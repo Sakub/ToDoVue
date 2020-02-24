@@ -12,11 +12,13 @@ Vue.component('tasks-wrapper', {
         </div>
         </div>
     `,
-    data(){
-        return{
-            listOfTasks: [
-                {name: 'some task', completed: false, id: Math.random()},
-            ]
+    data() {
+        return {
+            listOfTasks: [{
+                name: 'some task',
+                completed: false,
+                id: Math.random()
+            }, ]
         }
     }
 })
