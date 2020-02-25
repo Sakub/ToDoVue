@@ -30,13 +30,12 @@ Vue.component('tasks-wrapper', {
     },
     methods: {
         addTask() {
-            if(this.taskName === null || this.taskName === undefined || this.taskName===""){
+            if (this.taskName === null || this.taskName === undefined || this.taskName === "") {
                 return false
-            }
-            else{
-                if(!this.taskName.replace(/\s/g, '').length){
+            } else {
+                if (!this.taskName.replace(/\s/g, '').length) {
                     return false
-                }else{
+                } else {
                     this.listOfTasks.push({
                         name: this.taskName,
                         completed: false,
@@ -44,9 +43,9 @@ Vue.component('tasks-wrapper', {
                     })
                     this.taskName = null
                 }
-                
+
             }
-            
+
         }
     }
 })
