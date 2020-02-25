@@ -90,11 +90,11 @@ body {
     opacity: 0.4;
 }
 
-.task--done .task__doneButton:disabled {
+.task--done .task__doneButton--disabled {
     background: #1AC82C;
 }
 
-.task--done .task__doneButton:hover {
+.task--done .task__doneButton--disabled:hover {
     background: #1AC82C;
     cursor: unset;
 }
