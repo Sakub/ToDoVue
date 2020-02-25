@@ -4,7 +4,7 @@ Vue.component('tasks-wrapper', {
         <div class="tasksWrapper">
             <div class="task" v-for="task in listOfTasks" :key="task.id" :class="{'task--done': task.completed}">
                 <p class="task__title">{{task.name}}</p>
-                <button class="task__doneButton" :class="{'task__doneButton--disabled': task.completed}"><i class="fas fa-check doneButton__icon"></i></button>
+                <button class="task__doneButton" :class="{'task__doneButton--disabled': task.completed}" :disabled="task.completed"><i class="fas fa-check doneButton__icon"></i></button>
             </div>
             <div class="app__inputWrapper">
             <input type="text" class="app__input" placeholder="Add task" v-model="taskName">
