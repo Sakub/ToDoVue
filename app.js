@@ -8,7 +8,7 @@ Vue.component('tasks-wrapper', {
             </div>
             <div class="app__inputWrapper">
             <input type="text" class="app__input" placeholder="Add task" v-model="taskName">
-            <button class="app__addButton" @click="test"><i class="fa fa-plus addButton__icon"></i></button>
+            <button class="app__addButton" @click="addTask"><i class="fa fa-plus addButton__icon"></i></button>
         </div>
         </div>
     `,
@@ -29,17 +29,22 @@ Vue.component('tasks-wrapper', {
         }
     },
     methods: {
-        test() {
+        addTask() {
             if(this.taskName === null || this.taskName === undefined || this.taskName===""){
                 return false
             }
             else{
-                this.listOfTasks.push({
-                    name: this.taskName,
-                    completed: false,
-                    id: Math.random()
-                })
-                this.taskName = null
+                if(!this.taskName.replace(/\s/g, '').length){
+                    return false
+                }else{
+                    this.listOfTasks.push({
+                        name: this.taskName,
+                        completed: false,
+                        id: Math.random()
+                    })
+                    this.taskName = null
+                }
+                
             }
             
         }
