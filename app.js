@@ -14,9 +14,8 @@ Vue.component('tasks-wrapper', {
     `,
     data() {
         return {
-            taskName:null,
-            listOfTasks: [
-                {
+            taskName: null,
+            listOfTasks: [{
                     name: 'some task',
                     completed: true,
                     id: Math.random()
@@ -29,13 +28,20 @@ Vue.component('tasks-wrapper', {
             ]
         }
     },
-    methods:{
-        test(){
-            this.listOfTasks.push({
-                name: this.taskName,
-                completed: false,
-                id: Math.random()
-            })
+    methods: {
+        test() {
+            if(this.taskName === null || this.taskName === undefined || this.taskName===""){
+                return false
+            }
+            else{
+                this.listOfTasks.push({
+                    name: this.taskName,
+                    completed: false,
+                    id: Math.random()
+                })
+                this.taskName = null
+            }
+            
         }
     }
 })
