@@ -2,9 +2,10 @@ Vue.component('tasks-wrapper', {
     template: `
     
         <div class="tasksWrapper">
-            <div class="task" v-for="task in listOfTasks" :key="task.id" :class="{'task--done': task.completed}">
+            <p v-if="!listOfTasks.length" class="noTasksMessage">No tasks have been created</p>
+            <div class="task wow bounceIn" v-for="task in listOfTasks" :key="task.id" :class="{'task--done': task.completed}">
                 <p class="task__title">{{task.name}}</p>
-                <button class="task__doneButton" :class="{'task__doneButton--disabled': task.completed}" :disabled="task.completed"><i class="fas fa-check doneButton__icon"></i></button>
+                <button class="task__doneButton" :class="{'task__doneButton--disabled': task.completed}" :disabled="task.completed" @click="finishTask(task.id)"><i class="fas fa-check doneButton__icon"></i></button>
             </div>
             <div class="app__inputWrapper">
             <input type="text" class="app__input" placeholder="Add task" v-model="taskName">
@@ -15,17 +16,7 @@ Vue.component('tasks-wrapper', {
     data() {
         return {
             taskName: null,
-            listOfTasks: [{
-                    name: 'some task',
-                    completed: true,
-                    id: Math.random()
-                },
-                {
-                    name: 'some task 2',
-                    completed: false,
-                    id: Math.random()
-                }
-            ]
+            listOfTasks: []
         }
     },
     methods: {
@@ -46,6 +37,13 @@ Vue.component('tasks-wrapper', {
 
             }
 
+        },
+        finishTask(id) {
+            for (let i = 0; i < this.listOfTasks.length; i++) {
+                if (this.listOfTasks[i].id === id) {
+                    this.listOfTasks[i].completed = true
+                }
+            }
         }
     }
 })

@@ -7,14 +7,19 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f8d8f86635.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
     <title>To Do List</title>
 </head>
 
 <body>
-    <div id="app" class="app">
+    <div id="app" class="app wow fadeIn">
         <h1 class="app__header">ToDo List</h1>
         <tasks-wrapper></tasks-wrapper>
     </div>
+    <script src="WOW.js"></script>
+              <script>
+              new WOW().init();
+              </script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./app.js"></script>
 </body>
