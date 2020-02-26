@@ -3,7 +3,7 @@ Vue.component('tasks-wrapper', {
     
         <div class="tasksWrapper">
             <p v-if="!listOfTasks.length" class="noTasksMessage">No tasks have been created</p>
-            <div class="task animated bounceIn" v-for="task in listOfTasks" :key="task.id" :class="{'task--done': task.completed}">
+            <div class="task bounceIn" v-for="task in listOfTasks" :key="task.id" :class="{'task--done': task.completed}">
                 <p class="task__title">{{task.name}}</p>
                 <button class="task__doneButton" :class="{'task__doneButton--disabled': task.completed}" :disabled="task.completed" @click="finishTask(task.id)"><i class="fas fa-check doneButton__icon"></i></button>
             </div>
@@ -30,7 +30,7 @@ Vue.component('tasks-wrapper', {
                     this.listOfTasks.push({
                         name: this.taskName,
                         completed: false,
-                        id: Math.random()
+                        id: this.listOfTasks.length
                     })
                     this.taskName = null
                 }
@@ -42,6 +42,7 @@ Vue.component('tasks-wrapper', {
             for (let i = 0; i < this.listOfTasks.length; i++) {
                 if (this.listOfTasks[i].id === id) {
                     this.listOfTasks[i].completed = true
+                    break
                 }
             }
         }
